@@ -72,6 +72,12 @@ Known issues
 -------
 * The ActionBar title is not affected by the Locale change if it is defined in the Manifest label attribute. A valid workaround is to set the title programmatically. More info on [Issue #1](https://github.com/franmontiel/LocaleChanger/issues/1).
 
+### Mods
+
+```
+implementation 'com.github.andob:LocaleChanger:0.9.3'
+```
+
 License
 -------
     Copyright (C) 2017 Francisco José Montiel Navarro
