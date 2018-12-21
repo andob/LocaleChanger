@@ -24,7 +24,8 @@ import java.util.Locale;
 /**
  * An algorithm that matches the Locales with most attributes in common.
  */
-public final class ClosestMatchingAlgorithm implements MatchingAlgorithm {
+public final class ClosestMatchingAlgorithm implements MatchingAlgorithm
+{
 
     @Override
     public MatchingLocales findDefaultMatch(List<Locale> supportedLocales, List<Locale> systemLocales) {

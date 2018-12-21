@@ -35,25 +35,36 @@ class LocalePersistor {
 
     private static SharedPreferences localeSharedPrefs;
 
+    private static Locale cachedLocale;
+
     LocalePersistor(Context context) {
-        localeSharedPrefs = context.getSharedPreferences(SP_LOCALE, Context.MODE_PRIVATE);
+        if (localeSharedPrefs==null)
+            localeSharedPrefs = context.getSharedPreferences(SP_LOCALE, Context.MODE_PRIVATE);
     }
 
     @Nullable
     Locale load() {
-        Locale locale = null;
-        String language = localeSharedPrefs.getString(KEY_LANGUAGE, "");
-        if (!language.isEmpty()) {
-            locale = new Locale(
-                    language,
-                    localeSharedPrefs.getString(KEY_COUNTRY, ""),
-                    localeSharedPrefs.getString(KEY_VARIANT, "")
-            );
+        if (cachedLocale==null)
+        {
+            Locale locale = null;
+            String language = localeSharedPrefs.getString(KEY_LANGUAGE, "");
+            if (!language.isEmpty()) {
+                locale = new Locale(
+                        language,
+                        localeSharedPrefs.getString(KEY_COUNTRY, ""),
+                        localeSharedPrefs.getString(KEY_VARIANT, "")
+                );
+            }
+
+            cachedLocale=locale;
         }
-        return locale;
+
+        return cachedLocale;
     }
 
     void save(@NonNull Locale locale) {
+        cachedLocale=locale;
+
         SharedPreferences.Editor editor = localeSharedPrefs.edit();
         editor.putString(KEY_LANGUAGE, locale.getLanguage());
         editor.putString(KEY_COUNTRY, locale.getCountry());
@@ -62,6 +73,8 @@ class LocalePersistor {
     }
 
     void clear() {
+        cachedLocale=null;
+
         SharedPreferences.Editor editor = localeSharedPrefs.edit();
         editor.clear();
         editor.apply();

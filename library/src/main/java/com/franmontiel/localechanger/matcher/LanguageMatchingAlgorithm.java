@@ -24,7 +24,8 @@ import java.util.Locale;
 /**
  * An algorithm that match the Locales the same language in common.
  */
-public final class LanguageMatchingAlgorithm implements MatchingAlgorithm {
+public final class LanguageMatchingAlgorithm implements MatchingAlgorithm
+{
 
     @Override
     public MatchingLocales findDefaultMatch(List<Locale> supportedLocales, List<Locale> systemLocales) {

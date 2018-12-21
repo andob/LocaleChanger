@@ -52,7 +52,8 @@ class LocaleResolver {
                 new DefaultResolvedLocalePair(supportedLocales.get(0), supportedLocales.get(0));
     }
 
-    Locale resolve(Locale supportedLocale) throws UnsupportedLocaleException {
+    Locale resolve(Locale supportedLocale) throws UnsupportedLocaleException
+    {
         if (!supportedLocales.contains(supportedLocale))
             throw new UnsupportedLocaleException();
 
