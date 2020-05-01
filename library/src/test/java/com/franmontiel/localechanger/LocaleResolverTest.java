@@ -19,13 +19,12 @@ package com.franmontiel.localechanger;
 import com.franmontiel.localechanger.matcher.LanguageMatchingAlgorithm;
 import com.franmontiel.localechanger.matcher.MatchingAlgorithm;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Locale;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -54,7 +53,7 @@ public class LocaleResolverTest {
         DefaultResolvedLocalePair defaultResolvedLocalePair = sut.resolveDefault();
 
         // Then
-        Assert.assertEquals(LOCALE_ES_ES, defaultResolvedLocalePair.getResolvedLocale());
+        assertEquals(LOCALE_ES_ES, defaultResolvedLocalePair.getResolvedLocale());
     }
 
     @Test
@@ -71,7 +70,7 @@ public class LocaleResolverTest {
         Locale resolvedLocale = sut.resolve(LOCALE_IT_IT);
 
         // Then
-        Assert.assertEquals(LOCALE_IT_IT, resolvedLocale);
+        assertEquals(LOCALE_IT_IT, resolvedLocale);
     }
 
     @Test
@@ -91,7 +90,7 @@ public class LocaleResolverTest {
 
         // Then
         verify(matchingAlgorithm, never()).findMatch(LOCALE_IT_IT, Arrays.asList(LOCALE_EN_US, LOCALE_FR_FR));
-        Assert.assertEquals(LOCALE_IT_IT, resolvedLocale);
+        assertEquals(LOCALE_IT_IT, resolvedLocale);
     }
 
     @Test(expected = UnsupportedLocaleException.class)

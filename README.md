@@ -75,7 +75,13 @@ Known issues
 ### Mods
 
 ```
-implementation 'com.github.andob:LocaleChanger:0.9.3'
+repositories {
+    maven { url 'http://www.andob.info/' }
+}
+```
+
+```
+implementation 'ro.andob.localechanger:LocaleChanger:0.9.4'
 ```
 
 License

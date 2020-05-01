@@ -20,14 +20,14 @@ import com.franmontiel.localechanger.matcher.ClosestMatchingAlgorithm;
 import com.franmontiel.localechanger.matcher.MatchingAlgorithm;
 import com.franmontiel.localechanger.matcher.MatchingLocales;
 
-import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+
+import static org.junit.Assert.assertEquals;
 
 public class ClosestMatchingAlgorithmTest {
 
@@ -58,7 +58,7 @@ public class ClosestMatchingAlgorithmTest {
         MatchingLocales matchingLocales = sut.findDefaultMatch(supportedLocalesNotMatching, SYSTEM_LOCALES);
 
         // Then
-        Assert.assertEquals(null, matchingLocales);
+        assertEquals(null, matchingLocales);
     }
 
     @Test
@@ -70,7 +70,7 @@ public class ClosestMatchingAlgorithmTest {
         MatchingLocales matchingLocales = sut.findDefaultMatch(supportedLocalesWithMultipleMatches, SYSTEM_LOCALES);
 
         // Then
-        Assert.assertEquals(new MatchingLocales(LOCALE_FR_FR_VARIANT, LOCALE_FR_FR_VARIANT), matchingLocales);
+        assertEquals(new MatchingLocales(LOCALE_FR_FR_VARIANT, LOCALE_FR_FR_VARIANT), matchingLocales);
     }
 
     @Test
@@ -82,7 +82,7 @@ public class ClosestMatchingAlgorithmTest {
         MatchingLocales matchingLocales = sut.findMatch(nonMatchingLocale, SYSTEM_LOCALES);
 
         // Then
-        Assert.assertEquals(null, matchingLocales);
+        assertEquals(null, matchingLocales);
     }
 
     @Test
@@ -94,6 +94,6 @@ public class ClosestMatchingAlgorithmTest {
         MatchingLocales matchingLocales = sut.findMatch(matchingLocale, SYSTEM_LOCALES);
 
         // Then
-        Assert.assertEquals(new MatchingLocales(LOCALE_FR_FR_VARIANT, LOCALE_FR_FR_VARIANT), matchingLocales);
+        assertEquals(new MatchingLocales(LOCALE_FR_FR_VARIANT, LOCALE_FR_FR_VARIANT), matchingLocales);
     }
 }
