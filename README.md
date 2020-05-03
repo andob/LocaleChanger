@@ -4,19 +4,19 @@ An Android library to programmatically set the Locale of an app and persist the 
 
 Download
 --------
-Step 1. Add the JitPack repository in your root build.gradle at the end of repositories:
+Step 1. Add the repository in your root build.gradle at the end of repositories:
 ```groovy
 allprojects {
     repositories {
         ...
-        maven { url "https://jitpack.io" }
+        maven { url "http://maven.andob.info/repository/open_source" }
     }
 }
 ```
 Step 2. Add the dependency
 ```groovy
 dependencies {
-        compile 'com.github.franmontiel:LocaleChanger:0.9.2'
+        compile 'ro.andob.localechanger:LocaleChanger:0.9.4'
 }
 ```
 Usage
@@ -76,7 +76,7 @@ Known issues
 
 ```
 repositories {
-    maven { url 'http://www.andob.info/' }
+    maven { url 'http://maven.andob.info/reporitory/open_source' }
 }
 ```
 
