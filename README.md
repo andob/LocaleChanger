@@ -76,7 +76,7 @@ Known issues
 
 ```
 repositories {
-    maven { url 'http://maven.andob.info/reporitory/open_source' }
+    maven { url 'http://maven.andob.info/repository/open_source' }
 }
 ```
 
