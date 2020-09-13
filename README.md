@@ -16,7 +16,7 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-        compile 'ro.andob.localechanger:LocaleChanger:0.9.4'
+        compile 'ro.andob.localechanger:LocaleChanger:0.9.5'
 }
 ```
 Usage
@@ -81,7 +81,7 @@ repositories {
 ```
 
 ```
-implementation 'ro.andob.localechanger:LocaleChanger:0.9.4'
+implementation 'ro.andob.localechanger:LocaleChanger:0.9.5'
 ```
 
 License
