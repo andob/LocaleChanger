@@ -18,6 +18,7 @@ package com.franmontiel.localechanger;
 
 import android.content.Context;
 
+import androidx.annotation.StyleRes;
 import com.franmontiel.localechanger.matcher.LanguageMatchingAlgorithm;
 import com.franmontiel.localechanger.matcher.MatchingAlgorithm;
 import com.franmontiel.localechanger.utils.SystemLocaleRetriever;
@@ -112,11 +113,12 @@ public class LocaleChanger {
      * This method should be used inside the Activity attachBaseContext.
      * The returned Context should be used as argument for the super method call.
      *
-     * @param context
+     * @param context activity's base context
+     * @param themeResId activity's theme resource id
      * @return the resulting context that should be provided to the super method call.
      */
-    public static Context configureBaseContext(Context context) {
-        return delegate.configureBaseContext(context);
+    public static Context configureBaseContext(Context context, @StyleRes int themeResId) {
+        return LocaleChangingContextThemeWrapper.wrap(context, themeResId, LocaleChanger.getLocale().getLanguage());
     }
 
     /**

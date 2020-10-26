@@ -52,21 +52,6 @@ class AppLocaleChanger {
         context.getResources().updateConfiguration(conf, context.getResources().getDisplayMetrics());
     }
 
-    Context configureBaseContext(Context context, Locale locale) {
-        if (SupportedSDK.hasJellyBeanMr1()) {
-            return getLocaleConfiguredContext(context, locale);
-        } else {
-            return context;
-        }
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    private Context getLocaleConfiguredContext(Context context, Locale locale) {
-        Configuration conf = context.getResources().getConfiguration();
-        conf.setLocale(locale);
-        return context.createConfigurationContext(conf);
-    }
-
     private static class SupportedSDK {
 
         static boolean hasNougat() {

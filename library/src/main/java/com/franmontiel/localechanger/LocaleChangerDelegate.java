@@ -83,10 +83,6 @@ class LocaleChangerDelegate {
         return persistor.load();
     }
 
-    Context configureBaseContext(Context context) {
-        return appLocaleChanger.configureBaseContext(context, currentLocale);
-    }
-
     void onConfigurationChanged() {
         appLocaleChanger.change(currentLocale);
     }

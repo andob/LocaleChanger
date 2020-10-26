@@ -43,8 +43,6 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    testImplementation 'junit:junit:4.13'
-    testImplementation 'org.mockito:mockito-core:3.3.3'
 }
 
 publishing {
@@ -62,7 +60,7 @@ publishing {
                 from components.findByName("android${variant.name.capitalize()}")
                 groupId "ro.andob.localechanger"
                 artifactId 'LocaleChanger'
-                version '0.9.5'
+                version '0.9.6'
             }
         }
     }
