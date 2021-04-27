@@ -9,7 +9,7 @@ Step 1. Add the repository in your root build.gradle at the end of repositories:
 allprojects {
     repositories {
         ...
-        maven { url "http://maven.andob.info/repository/open_source" }
+        maven { url "https://maven.andob.info/repository/open_source" }
     }
 }
 ```
@@ -76,7 +76,7 @@ Known issues
 
 ```
 repositories {
-    maven { url 'http://maven.andob.info/repository/open_source' }
+    maven { url 'https://maven.andob.info/repository/open_source' }
 }
 ```
 
